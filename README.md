@@ -2,7 +2,7 @@
 
 ![](http://i.imgur.com/HTmhl2b.png)
 
-## Why am I Remake
+## Why did I Remake
 
 Beacuse [previous splapi](https://github.com/retrorocket/splapi) was dead and [new splapi](https://splapi.fetus.jp/) was created.
 
