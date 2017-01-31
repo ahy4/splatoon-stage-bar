@@ -1,10 +1,11 @@
 #!/bin/zsh
 
 session_cookie="_wag_session="`tr -d "\n" < ~/homestead/splbar3/.cookie`
+ua_option="'User-Agent: splatoon-stage-bar/0.1 (+https://github.com/ahyahya/splatoon-stage-bar)'"
 
 member_json=`curl -s --cookie ${session_cookie} https://splatoon.nintendo.net/friend_list/index.json | jq .`
-current_stage=`curl -s https://splapi.fetus.jp/gachi/now | jq '.'`
-next_stages=`curl -s https://splapi.fetus.jp/gachi/next_all | jq '.'`
+current_stage=`curl -s -H ${ua_option} https://splapi.fetus.jp/gachi/now | jq '.'`
+next_stages=`curl -s -H ${ua_option} https://splapi.fetus.jp/gachi/next_all | jq '.'`
 members=`echo $member_json | jq -r '.[].mii_name'`
 
 function print_stage () {
